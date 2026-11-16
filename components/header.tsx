@@ -85,10 +85,12 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <ButtonLink href={phoneHref} className="h-10 px-3.5 text-sm sm:h-11 sm:px-5 sm:text-[15px]">
-            <PhoneIcon className="h-4 w-4" />
-            Pozovite
-          </ButtonLink>
+          <div className="hidden min-[992px]:block">
+            <ButtonLink href={phoneHref}>
+              <PhoneIcon className="h-4 w-4" />
+              Pozovite
+            </ButtonLink>
+          </div>
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white transition-colors duration-200 hover:border-white/30 hover:bg-white/5 min-[992px]:hidden"
@@ -171,10 +173,6 @@ export function Header() {
                 ),
               )}
             </ul>
-            <ButtonLink href={phoneHref} className="mt-4 w-full">
-              <PhoneIcon className="h-4 w-4" />
-              Pozovite nas
-            </ButtonLink>
           </nav>
         </div>
       </div>

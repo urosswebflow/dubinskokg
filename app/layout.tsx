@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import "./globals.css";
+import { CallFab } from "@/components/call-fab";
 import { business, siteUrl } from "@/lib/site";
 
 const geistSans = Geist({
@@ -59,6 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           Preskoči na sadržaj
         </a>
         {children}
+        <CallFab />
       </body>
     </html>
   );

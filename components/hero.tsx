@@ -35,12 +35,12 @@ export function Hero() {
             vozila i enterijera automobila. Peremo karoseriju, čistimo sedišta i patosnice, poliramo farove
             i sređujemo kočnice. Ako vam treba dubinsko pranje automobila ili nameštaja, pozovite i dogovorite termin.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href={phoneHref}>
-              <PhoneIcon className="h-4 w-4" />
+          <div className="mt-6 flex flex-col items-start gap-2 sm:mt-8 sm:flex-row sm:gap-3">
+            <ButtonLink href={phoneHref} size="sm">
+              <PhoneIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
               Pozovite nas
             </ButtonLink>
-            <ButtonLink href="/#usluge" variant="ghost">
+            <ButtonLink href="/#usluge" variant="ghost" size="sm">
               Pogledaj usluge
             </ButtonLink>
           </div>

@@ -56,6 +56,14 @@ export function PhoneIcon({ className }: IconProps) {
   );
 }
 
+export function HeadphonesIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M12 3.2a8.1 8.1 0 0 0-8.1 8.1v5.4c0 1 .8 1.8 1.8 1.8h1.5c.6 0 1-.4 1-1V13c0-.6-.4-1-1-1H5.2a6.9 6.9 0 0 1 13.6 0H16.8c-.6 0-1 .4-1 1v4.5c0 .6.4 1 1 1h1.5c1 0 1.8-.8 1.8-1.8v-5.4A8.1 8.1 0 0 0 12 3.2Z" />
+    </svg>
+  );
+}
+
 export function InstagramIcon({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
