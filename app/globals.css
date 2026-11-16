@@ -1,26 +1,192 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: #07080c;
+  --color-panel: #0e1016;
+  --color-muted: #a7adb8;
+  --color-accent: #2f7cf6;
+  --font-sans: var(--font-geist-sans), "Segoe UI", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+  scrollbar-color: #2a3140 #07080c;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #07080c;
+  color: #ffffff;
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #2f7cf6;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #2f7cf6;
+  outline-offset: 3px;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 1px;
+  background: #2f7cf6;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.btn-primary,
+.btn-ghost {
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.btn-primary:hover,
+.btn-ghost:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary:active,
+.btn-ghost:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.lift {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.lift:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.lift:hover .icon-pop {
+  transform: scale(1.08);
+}
+
+.icon-pop {
+  transition: transform 0.3s ease;
+}
+
+.map-dark {
+  filter: invert(90%) hue-rotate(180deg) saturate(0.55) brightness(0.95) contrast(0.95);
+}
+
+.price-frame {
+  container-type: inline-size;
+}
+
+.price-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.price-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.price-card {
+  flex: 0 0 calc((100cqw - 2rem) / 3);
+  width: calc((100cqw - 2rem) / 3);
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-copy > * {
+    animation: hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-copy > *:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+
+  .hero-copy > *:nth-child(2) {
+    animation-delay: 0.14s;
+  }
+
+  .hero-copy > *:nth-child(3) {
+    animation-delay: 0.22s;
+  }
+
+  .hero-copy > *:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 22%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn-primary,
+  .btn-ghost,
+  .lift,
+  .icon-pop,
+  .nav-link::after {
+    transition: none;
+  }
+
+  .btn-primary:hover,
+  .btn-ghost:hover,
+  .lift:hover,
+  .lift:hover .icon-pop {
+    transform: none;
+  }
 }
