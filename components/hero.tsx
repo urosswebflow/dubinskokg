@@ -7,20 +7,28 @@ export function Hero() {
   return (
     <section
       id="pocetna"
-      className="relative flex min-h-[680px] items-center overflow-hidden lg:min-h-[calc(100vh-84px)]"
+      className="relative -mt-[84px] flex h-dvh items-center overflow-hidden bg-ink min-[992px]:mt-0 min-[992px]:h-auto min-[992px]:min-h-[calc(100vh-84px)]"
     >
+      <Image
+        src="/images/dubinsko-pranje-kragujevac-hero-mobile.jpg"
+        alt="Prednji deo tamnog automobila u studiju, sa upaljenim farovima"
+        fill
+        priority
+        sizes="100vw"
+        className="object-contain object-bottom min-[992px]:hidden"
+      />
       <Image
         src="/images/dubinsko-pranje-kragujevac-hero.jpg"
         alt="Prednji deo tamnog automobila u studiju, sa upaljenim farovima"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[62%_center]"
+        className="hidden object-cover object-[62%_center] min-[992px]:block"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/92 to-ink/75 lg:via-ink/80 lg:to-ink/10" />
-      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-ink to-transparent" />
+      <div className="hero-shade absolute inset-0" />
+      <div className="hero-floor absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-ink to-transparent" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1180px] px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
+      <div className="relative z-10 mx-auto w-full max-w-[1180px] px-5 sm:px-6 min-[992px]:px-8 min-[992px]:py-20">
         <div className="hero-copy max-w-[680px]">
           <h1 className="text-[2.15rem] font-bold leading-[0.95] tracking-[-0.035em] text-white min-[480px]:text-5xl sm:text-6xl lg:text-[4.7rem]">
             <span className="block">Nemanja Detailing</span>
@@ -37,7 +45,7 @@ export function Hero() {
           </p>
           <div className="mt-6 flex flex-col items-start gap-2 sm:mt-8 sm:flex-row sm:gap-3">
             <ButtonLink href={phoneHref} size="sm">
-              <PhoneIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              <PhoneIcon className="h-5 w-5 min-[992px]:h-4 min-[992px]:w-4" />
               Pozovite nas
             </ButtonLink>
             <ButtonLink href="/#usluge" variant="ghost" size="sm">

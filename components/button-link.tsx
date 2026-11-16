@@ -23,7 +23,7 @@ export function ButtonLink({
 
   const sizeClass =
     size === "sm"
-      ? "h-9 gap-1.5 px-3.5 text-[13px] sm:h-12 sm:gap-2 sm:px-6 sm:text-[15px]"
+      ? "h-[3.375rem] gap-[0.55rem] px-[1.3rem] text-[1.22rem] min-[992px]:h-12 min-[992px]:gap-2 min-[992px]:px-6 min-[992px]:text-[15px]"
       : "h-12 gap-2 px-6 text-[15px]";
 
   const classNames = `inline-flex w-auto items-center justify-center rounded-full font-medium ${sizeClass} ${styles} ${className}`;
