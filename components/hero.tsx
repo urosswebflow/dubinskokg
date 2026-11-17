@@ -10,20 +10,12 @@ export function Hero() {
       className="relative -mt-[84px] flex h-dvh items-center overflow-hidden bg-ink min-[992px]:mt-0 min-[992px]:h-auto min-[992px]:min-h-[calc(100vh-84px)]"
     >
       <Image
-        src="/images/dubinsko-pranje-kragujevac-hero-mobile.jpg"
-        alt="Prednji deo tamnog automobila u studiju, sa upaljenim farovima"
-        fill
-        priority
-        sizes="100vw"
-        className="object-contain object-bottom min-[992px]:hidden"
-      />
-      <Image
         src="/images/dubinsko-pranje-kragujevac-hero.jpg"
         alt="Prednji deo tamnog automobila u studiju, sa upaljenim farovima"
         fill
         priority
         sizes="100vw"
-        className="hidden object-cover object-[62%_center] min-[992px]:block"
+        className="object-cover object-center min-[992px]:object-[62%_center]"
       />
       <div className="hero-shade absolute inset-0" />
       <div className="hero-floor absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-ink to-transparent" />
